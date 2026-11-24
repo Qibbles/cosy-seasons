@@ -1,0 +1,12 @@
+{
+  "name": "cosy-seasons",
+  "description": "A cosy seasonal storybook backdrop for Claude.",
+  "owner": { "name": "Qibbles", "url": "https://github.com/Qibbles" },
+  "plugins": [
+    {
+      "name": "cosy-seasons",
+      "source": "./",
+      "description": "A cosy animated storybook backdrop that follows the season, with a girl, a frog and Kuro the black cat; the ground pile rises as your context window fills."
+    }
+  ]
+}
