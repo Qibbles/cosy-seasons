@@ -279,14 +279,14 @@ const girlHat = (season: Season): string => {
   }
   if (season === 'summer') {
     return (
-      '<ellipse cx="0" cy="-166" rx="70" ry="14" fill="#e8c77a"/>' +
-      '<path d="M-38,-168 Q-36,-204 0,-206 Q36,-204 38,-168 Z" fill="#e8c77a"/>' +
-      '<path d="M-38,-174 Q0,-182 38,-174 L38,-166 Q0,-174 -38,-166 Z" fill="#d0453b"/>'
+      '<ellipse cx="0" cy="-156" rx="68" ry="13" fill="#e8c77a"/>' +
+      '<path d="M-40,-156 Q-38,-196 0,-198 Q38,-196 40,-156 Q0,-164 -40,-156 Z" fill="#e8c77a"/>' +
+      '<path d="M-39,-166 Q0,-174 39,-166 L40,-157 Q0,-165 -40,-157 Z" fill="#d0453b"/>'
     )
   }
 
   // a knitted beret
-  return '<path d="M-46,-162 Q-40,-200 4,-198 Q50,-196 46,-160 Q0,-172 -46,-162 Z" fill="#7a3a2a"/><path d="M2,-198 l2,-10" stroke="#7a3a2a" stroke-width="5" stroke-linecap="round"/>'
+  return '<path d="M-44,-148 Q-48,-192 2,-192 Q52,-190 46,-146 Q0,-166 -44,-148 Z" fill="#7a3a2a"/><path d="M-42,-152 Q0,-170 44,-150" stroke="#5e2c20" stroke-width="4" fill="none"/><path d="M4,-192 l2,-10" stroke="#7a3a2a" stroke-width="5" stroke-linecap="round"/>'
 }
 
 /** The girl, dressed for the season, waving. */
