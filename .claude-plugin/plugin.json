@@ -1,6 +1,6 @@
 {
   "name": "cosy-seasons",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "A cosy animated backdrop that follows the season; the ground pile (snow, leaves, petals, meadow) rises as your context window fills.",
   "license": "MIT",
   "types": "./types/index.d.ts"
