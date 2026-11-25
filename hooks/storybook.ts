@@ -326,42 +326,7 @@ export const girl = (season: Season, x: number, y: number): string => {
   )
 }
 
-const frogWear = (season: Season): string => {
-  if (season === 'winter') {
-    // a Santa hat, its tip flopped over with a bobbing pompom
-    return (
-      '<path d="M-22,-132 Q-12,-172 28,-166 Q12,-152 22,-132 Z" fill="#d0453b"/>' +
-      '<rect x="-25" y="-138" width="50" height="11" rx="5.5" fill="#f3e6c8"/>' +
-      '<circle cx="29" cy="-166" r="7" fill="#f3e6c8" class="b-pom"/>'
-    )
-  }
-  if (season === 'spring') {
-    // a yellow rain hat for spring showers
-    return (
-      '<path d="M-18,-132 Q-17,-160 0,-161 Q17,-160 18,-132 Z" fill="#f5c842"/>' +
-      '<path d="M-31,-128 Q0,-142 31,-128 L27,-122 Q0,-134 -27,-122 Z" fill="#e8b42e"/>' +
-      '<path d="M-10,-152 Q0,-156 10,-152" stroke="#e8b42e" stroke-width="2.5" fill="none"/>'
-    )
-  }
-  if (season === 'summer') {
-    // sunglasses over his big eyes
-    return (
-      '<rect x="-42" y="-140" width="32" height="24" rx="10" fill="#1d2433"/>' +
-      '<rect x="10" y="-140" width="32" height="24" rx="10" fill="#1d2433"/>' +
-      '<path d="M-10,-130 Q0,-136 10,-130" stroke="#1d2433" stroke-width="4" fill="none"/>' +
-      '<path d="M-36,-134 l8,-2 M16,-134 l8,-2" stroke="#7fa6d6" stroke-width="3" stroke-linecap="round"/>'
-    )
-  }
-
-  // an acorn cap
-  return (
-    '<path d="M-20,-128 Q-20,-152 0,-153 Q20,-152 20,-128 Q0,-136 -20,-128 Z" fill="#8a5a32"/>' +
-    '<path d="M-16,-140 h32 M-12,-147 h24" stroke="#6e4426" stroke-width="2.5"/>' +
-    '<path d="M0,-153 q2,-8 6,-10" stroke="#5a3a26" stroke-width="4" fill="none" stroke-linecap="round"/>'
-  )
-}
-
-/** The frog: green, a yellow belly, big eyes, dressed for the season, waving. */
+/** The frog: green, a yellow belly, big eyes, waving. */
 export const frog = (season: Season, x: number, y: number): string =>
   `<g transform="translate(${r(x)},${r(y)})">` +
   '<ellipse cx="0" cy="0" rx="52" ry="8" fill="#000" opacity="0.15"/>' +
@@ -375,7 +340,6 @@ export const frog = (season: Season, x: number, y: number): string =>
   '<circle cx="-20" cy="-130" r="2.5" fill="#fff"/><circle cx="26" cy="-130" r="2.5" fill="#fff"/>' +
   '<path d="M-20,-92 q20,16 40,0" stroke="#2f5d1e" stroke-width="4" fill="none" stroke-linecap="round"/>' +
   '<ellipse cx="-36" cy="-94" rx="8" ry="4.5" fill="#f29a9a" opacity="0.8"/><ellipse cx="36" cy="-94" rx="8" ry="4.5" fill="#f29a9a" opacity="0.8"/>' +
-  frogWear(season) +
   '<path d="M-40,-50 Q-52,-34 -40,-22" stroke="#79c24a" stroke-width="13" fill="none" stroke-linecap="round"/>' +
   '<g class="b-wave" style="animation-delay:-1.7s"><path d="M38,-56 Q60,-70 60,-96" stroke="#79c24a" stroke-width="13" fill="none" stroke-linecap="round"/><circle cx="60" cy="-100" r="8" fill="#79c24a"/></g>' +
   '</g>'
