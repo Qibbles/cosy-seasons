@@ -327,37 +327,38 @@ export const girl = (season: Season, x: number, y: number): string => {
 }
 
 const frogWear = (season: Season): string => {
-  if (season === 'winter' || season === 'autumn') {
-    const c = season === 'winter' ? '#d0453b' : '#e07b2a'
-    const scarf =
-      `<path d="M-44,-74 Q0,-56 44,-74 L45,-60 Q0,-42 -45,-60 Z" fill="${c}"/><path d="M-30,-62 l-8,34 l14,2 l6,-34 Z" fill="${c}"/>` +
-      '<path d="M-30,-48 l-8,0 M-28,-40 l-8,0" stroke="#f3e6c8" stroke-width="3"/>'
-    const hat =
-      season === 'winter'
-        ? // a knit beanie between the eyes, with a bobbing pompom
-          '<path d="M-20,-128 Q-18,-156 0,-157 Q18,-156 20,-128 Q0,-134 -20,-128 Z" fill="#d0453b"/>' +
-          '<path d="M-21,-134 Q0,-140 21,-134 L21,-126 Q0,-132 -21,-126 Z" fill="#f3e6c8"/>' +
-          '<circle cx="0" cy="-161" r="7" fill="#f3e6c8" class="b-pom"/>'
-        : // an acorn cap
-          '<path d="M-20,-128 Q-20,-152 0,-153 Q20,-152 20,-128 Q0,-136 -20,-128 Z" fill="#8a5a32"/>' +
-          '<path d="M-16,-140 h32 M-12,-147 h24" stroke="#6e4426" stroke-width="2.5"/>' +
-          '<path d="M0,-153 q2,-8 6,-10" stroke="#5a3a26" stroke-width="4" fill="none" stroke-linecap="round"/>'
-
-    return scarf + hat
+  if (season === 'winter') {
+    // a Santa hat, its tip flopped over with a bobbing pompom
+    return (
+      '<path d="M-22,-132 Q-12,-172 28,-166 Q12,-152 22,-132 Z" fill="#d0453b"/>' +
+      '<rect x="-25" y="-138" width="50" height="11" rx="5.5" fill="#f3e6c8"/>' +
+      '<circle cx="29" cy="-166" r="7" fill="#f3e6c8" class="b-pom"/>'
+    )
   }
   if (season === 'spring') {
-    let crown = ''
-
-    for (let k = 0; k < 7; k++) {
-      const a = Math.PI + (k / 6) * Math.PI
-      crown += `<circle cx="${r(Math.cos(a) * 44)}" cy="${r(-120 + Math.sin(a) * 20)}" r="7" fill="${['#f19cb9', '#ffd34d', '#ffffff'][k % 3]}"/>`
-    }
-
-    return crown
+    // a yellow rain hat for spring showers
+    return (
+      '<path d="M-18,-132 Q-17,-160 0,-161 Q17,-160 18,-132 Z" fill="#f5c842"/>' +
+      '<path d="M-31,-128 Q0,-142 31,-128 L27,-122 Q0,-134 -27,-122 Z" fill="#e8b42e"/>' +
+      '<path d="M-10,-152 Q0,-156 10,-152" stroke="#e8b42e" stroke-width="2.5" fill="none"/>'
+    )
+  }
+  if (season === 'summer') {
+    // sunglasses over his big eyes
+    return (
+      '<rect x="-42" y="-140" width="32" height="24" rx="10" fill="#1d2433"/>' +
+      '<rect x="10" y="-140" width="32" height="24" rx="10" fill="#1d2433"/>' +
+      '<path d="M-10,-130 Q0,-136 10,-130" stroke="#1d2433" stroke-width="4" fill="none"/>' +
+      '<path d="M-36,-134 l8,-2 M16,-134 l8,-2" stroke="#7fa6d6" stroke-width="3" stroke-linecap="round"/>'
+    )
   }
 
-  // a little straw hat
-  return '<ellipse cx="0" cy="-146" rx="40" ry="8" fill="#e8c77a"/><path d="M-22,-148 Q-20,-170 0,-170 Q20,-170 22,-148 Z" fill="#e8c77a"/><path d="M-22,-152 H22" stroke="#4f8fd6" stroke-width="5"/>'
+  // an acorn cap
+  return (
+    '<path d="M-20,-128 Q-20,-152 0,-153 Q20,-152 20,-128 Q0,-136 -20,-128 Z" fill="#8a5a32"/>' +
+    '<path d="M-16,-140 h32 M-12,-147 h24" stroke="#6e4426" stroke-width="2.5"/>' +
+    '<path d="M0,-153 q2,-8 6,-10" stroke="#5a3a26" stroke-width="4" fill="none" stroke-linecap="round"/>'
+  )
 }
 
 /** The frog: green, a yellow belly, big eyes, dressed for the season, waving. */
@@ -383,11 +384,10 @@ const kuroWear = (season: Season): string => {
   const collar = '<path d="M-20,-58 Q0,-50 20,-58" stroke="#d0453b" stroke-width="5" fill="none"/><circle cx="0" cy="-52" r="5" fill="#f0c24b"/>'
 
   if (season === 'winter') {
-    // a striped knit scarf
+    // reindeer antlers
     return (
-      '<path d="M-24,-62 Q0,-50 24,-62 L25,-51 Q0,-38 -25,-51 Z" fill="#d0453b"/>' +
-      '<path d="M-14,-56 l2,10 M-2,-53 l0,11 M10,-55 l-2,10" stroke="#f3e6c8" stroke-width="3"/>' +
-      '<path d="M12,-50 l6,26 l10,-2 l-5,-26 Z" fill="#d0453b"/><path d="M14,-40 l9,-2 M16,-32 l9,-2" stroke="#f3e6c8" stroke-width="3"/>'
+      collar +
+      '<path d="M-12,-104 Q-16,-122 -26,-136 M-19,-120 Q-30,-124 -34,-130 M-22,-128 Q-16,-136 -14,-142 M12,-104 Q16,-122 26,-136 M19,-120 Q30,-124 34,-130 M22,-128 Q16,-136 14,-142" stroke="#a87a4a" stroke-width="5" fill="none" stroke-linecap="round"/>'
     )
   }
   if (season === 'spring') {
@@ -411,11 +411,12 @@ const kuroWear = (season: Season): string => {
     )
   }
 
-  // a tiny beret, tipped to one side
+  // a little witch hat
   return (
     collar +
-    '<path d="M-20,-100 Q-22,-120 2,-120 Q26,-119 22,-99 Q0,-110 -20,-100 Z" fill="#7a3a2a"/>' +
-    '<path d="M2,-120 l1,-7" stroke="#7a3a2a" stroke-width="4" stroke-linecap="round"/>'
+    '<path d="M-15,-104 L6,-146 Q9,-150 10,-144 L15,-104 Z" fill="#5a3a7a"/>' +
+    '<path d="M-13,-110 L14,-110 L15,-104 L-15,-104 Z" fill="#e07b2a"/>' +
+    '<ellipse cx="0" cy="-103" rx="27" ry="5" fill="#5a3a7a"/>'
   )
 }
 
