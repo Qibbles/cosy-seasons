@@ -14,3 +14,16 @@ The ground pile (snow, petals, meadow grass or leaves) rises with your context w
 ```
 
 The backdrop draws in the Claude desktop and mobile apps; terminals and editors show none.
+
+## Updating
+
+To update automatically, type `/plugin`, open the **Marketplaces** tab, select **cosy-seasons** and turn on **auto-update**.
+
+To update by hand:
+
+```
+claude plugin marketplace update cosy-seasons
+claude plugin update cosy-seasons@cosy-seasons
+```
+
+Then run `/reload-plugins` or start a new session. `claude plugin list` shows which version you have.
